@@ -6,9 +6,22 @@
     xmlns:local="clr-namespace:Ascend"
     Title="Ascend">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Log Workouts"
+            ContentTemplate="{DataTemplate local:WorkoutPage}"/>
+
+        <ShellContent
+            Title="Quests"
+            ContentTemplate="{DataTemplate local:QuestsPage}"/>
+
+        <ShellContent
+            Title="Character"
+            ContentTemplate="{DataTemplate local:CharacterPage}"/>
+
+        <ShellContent
+            Title="Achievements / Badges"
+            ContentTemplate="{DataTemplate local:BadgesPage}"/>
+    </TabBar>
 
 </Shell>

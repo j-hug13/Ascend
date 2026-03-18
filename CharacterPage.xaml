@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ascend.CharacterPage"
+             Title="Character">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+            <Label 
+                Text="Your Hero"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Level: 1"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+            <BoxView HeightRequest="2" Color="Gray"/>
+
+            <Label Text="Stats" FontSize="24"/>
+
+            <HorizontalStackLayout>
+                <Label Text="Strength:"/>
+                <Label x:Name="StrengthLabel" Text="1"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Agility:"/>
+                <Label x:Name="AgilityLabel" Text="1"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Dexterity:"/>
+                <Label x:Name="DexterityLabel" Text="1"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Endurance:"/>
+                <Label x:Name="EnduranceLabel" Text="1"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

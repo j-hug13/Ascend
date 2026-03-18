@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ascend.CategoryPage"
+             Title="{Binding CategoryName}">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+            <Label 
+                x:Name="CategoryLabel"
+                Text=""
+                FontSize="24" 
+                HorizontalOptions="Center" />
+
+            <CollectionView x:Name="WorkoutsCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="15" Spacing="15">
+                            <Button Text="{Binding Name}" Clicked="WorkoutClicked"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
