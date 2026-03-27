@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ascend.WorkoutHistoryPage"
+             Title="Workout History">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+            <Label Text="Workout History"
+                   FontSize="28"
+                   HorizontalOptions="Center"/>
+            
+            <!-- Calender -->
+            <DatePicker x:Name="WorkoutDatePicker"
+                        DateSelected="OnDateSelected"
+                        Scale="1.5"
+                        HorizontalOptions="Center"/>
+
+            <!-- View for Logged Workouts -->
+            <CollectionView x:Name="WorkoutHistoryCollection"
+                            SelectionMode="None">
+                
+                <!-- Empty Workout List -->
+                <CollectionView.EmptyView>
+                    <StackLayout Padding="20" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="You have no workouts logged for this date" FontSize="28" TextColor="Gray" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Border Stroke="#2E7D32" StrokeThickness="2" Padding="15" StrokeShape="RoundRectangle 10" Margin="15">
+                                <VerticalStackLayout Spacing="10">
+                                    <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Date, StringFormat='Logged on {0:MMM dd, yyyy}'}" FontSize="12" TextColor="Gray"/>
+
+                                    <!-- Strength Workout Info -->
+                                    <Label Text="{Binding Sets, StringFormat='Sets: {0}'}"
+                                                       IsVisible="{Binding Sets, Converter={StaticResource NullToBoolConverter}}"/>
+                                    <Label Text="{Binding Reps, StringFormat='Reps: {0}'}"
+                                                       IsVisible="{Binding Reps, Converter={StaticResource NullToBoolConverter}}"/>
+                                    <Label Text="{Binding Weight, StringFormat='Weight: {0}'}"
+                                                       IsVisible="{Binding Weight, Converter={StaticResource NullToBoolConverter}}"/>
+
+                                    <!-- Cardio Workout Info -->
+                                    <Label Text="{Binding Duration, StringFormat='Duration: {0} min'}"
+                                                       IsVisible="{Binding Duration, Converter={StaticResource NullToBoolConverter}}"/>
+                                    <Label Text="{Binding Distance, StringFormat='Distance: {0} miles'}"
+                                                       IsVisible="{Binding Distance, Converter={StaticResource NullToBoolConverter}}"/>
+
+                                    <!-- Delete Workout Button -->
+                                    <Button Text="Delete"
+                                            BackgroundColor="#C62828"
+                                            TextColor="White"
+                                            Clicked="OnDeleteClicked"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

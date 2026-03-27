@@ -1,5 +1,3 @@
-using Ascend.Services;
-
 namespace Ascend;
 
 public partial class CharacterPage : ContentPage

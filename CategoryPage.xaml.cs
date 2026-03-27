@@ -1,4 +1,3 @@
-using Ascend.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +6,26 @@ namespace Ascend;
 
 public partial class CategoryPage : ContentPage
 {
-	private List<Workout> Workouts;
+	private List<Workout> _workouts;
+	private string _category;
 
-    public string CategoryName { get; set; }
-
-    public CategoryPage(string categoryName, List<Workout> workouts)
+    public CategoryPage(string category, List<Workout> workouts)
 	{
 		InitializeComponent();
-		Workouts = workouts;
-        CategoryName = categoryName;
-		CategoryLabel.Text = categoryName;
-		WorkoutsCollection.ItemsSource = workouts;
+		_workouts = workouts;
+		_category = category;
+		Title = category;
+		CategoryLabel.Text = category;
+		WorkoutsCollection.ItemsSource = _workouts;
     }
 
 	private async void WorkoutClicked(object sender, EventArgs e)
 	{
 		var button = sender as Button;
 		if (button == null) return;
-		var workoutName = button?.Text;
-		var workout = Workouts.FirstOrDefault(w => w.Name == workoutName);
+		var workoutName = button.Text;
 
-		if (workout != null)
-		{
-            Manager.LogWorkout(workout);
-			await DisplayAlert("Workout Logged", $"You have logged: {workoutName}", "OK");
-        }
+		await Navigation.PushAsync(new WorkoutDetailPage(workoutName, _category));
     }
 
 	protected override void OnAppearing()

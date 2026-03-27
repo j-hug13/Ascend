@@ -20,8 +20,11 @@
             ContentTemplate="{DataTemplate local:CharacterPage}"/>
 
         <ShellContent
-            Title="Achievements / Badges"
+            Title="Achievements/Badges"
             ContentTemplate="{DataTemplate local:BadgesPage}"/>
-    </TabBar>
 
+        <ShellContent
+            Title="History"
+            ContentTemplate="{DataTemplate local:WorkoutHistoryPage}"/>
+    </TabBar>
 </Shell>

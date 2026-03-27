@@ -1,5 +1,3 @@
-using Ascend.Services;
-
 namespace Ascend;
 
 public partial class WorkoutPage : ContentPage
@@ -11,21 +9,15 @@ public partial class WorkoutPage : ContentPage
 
 	private async void StrengthClicked(object sender, EventArgs e)
 	{
-        var workouts = new List<Workout>
-        {
-            new Workout("Bench Press"),
-            new Workout("Squats"),
-            new Workout("Deadlift")
-        };
-
-        await Navigation.PushAsync(new CategoryPage("Strength Training", workouts));
+        await Navigation.PushAsync(new MuscleGroupPage());
     }
 
     private async void FlexibilityClicked(object sender, EventArgs e)
     {
+        string category = "Flexibility";
         var workouts = new List<Workout>
         {
-            new Workout("Stretches")
+            new Workout{ Name = "Stretches", Category = category}
         };
 
         await Navigation.PushAsync(new CategoryPage("Flexibility & Mobility", workouts));
@@ -33,11 +25,12 @@ public partial class WorkoutPage : ContentPage
 
     private async void CardioClicked(object sender, EventArgs e)
     {
+        string category = "Cardio";
         var workouts = new List<Workout>
         {
-            new Workout("Run"),
-            new Workout("Bike Ride"),
-            new Workout("Swim")
+            new Workout{ Name = "Run", Category = category },
+            new Workout{ Name = "Bike Ride", Category = category },
+            new Workout{ Name = "Swim", Category = category }
         };
 
         await Navigation.PushAsync(new CategoryPage("Cardio", workouts));

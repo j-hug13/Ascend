@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ascend.MuscleGroupPage"
+             Title="Muscle Groups">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Select Muscle Group"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+
+            <Grid ColumnDefinitions="300,300"
+                  RowDefinitions="Auto,Auto,Auto"
+                  ColumnSpacing="15"
+                  RowSpacing="15"
+                  HorizontalOptions="Center">
+
+                <!-- Chest -->
+                <Border Grid.Row="0" Grid.Column="0"
+                        Stroke="#2E7D32"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        HeightRequest="130">
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Image Source="chest.png" HeightRequest="50"/>
+                        <Label Text="Chest" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ChestClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Back -->
+                <Border Grid.Row="0" Grid.Column="1"
+                        Stroke="#2E7D32"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        HeightRequest="130">
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Image Source="back.png" HeightRequest="50"/>
+                        <Label Text="Back" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Legs -->
+                <Border Grid.Row="1" Grid.Column="0"
+                        Stroke="#2E7D32"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        HeightRequest="130">
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Image Source="legs.png" HeightRequest="50"/>
+                        <Label Text="Legs" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LegsClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Shoulders -->
+                <Border Grid.Row="1" Grid.Column="1"
+                        Stroke="#2E7D32"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        HeightRequest="130">
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Image Source="shoulders.png" HeightRequest="50"/>
+                        <Label Text="Shoulders" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShouldersClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Arms -->
+                <Border Grid.Row="2" Grid.Column="0"
+                        Stroke="#2E7D32"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        HeightRequest="130">
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Image Source="arms.png" HeightRequest="50"/>
+                        <Label Text="Arms" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ArmsClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Core -->
+                <Border Grid.Row="2" Grid.Column="1"
+                        Stroke="#2E7D32"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        HeightRequest="130">
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Image Source="core.png" HeightRequest="50"/>
+                        <Label Text="Core" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="CoreClicked"/>
+                    </Border.GestureRecognizers>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

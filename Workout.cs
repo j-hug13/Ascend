@@ -18,10 +18,5 @@ namespace Ascend
 
         public double? Duration { get; set; }
         public double? Distance { get; set; }
-
-        public Workout(string name)
-        {
-            Name = name;
-        }
     }
 }

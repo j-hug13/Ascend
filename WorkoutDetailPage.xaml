@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ascend.WorkoutDetailPage"
+             Title="Workout Details">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label 
+                x:Name="WorkoutNameLabel"
+                FontSize="24" 
+                HorizontalOptions="Center"/>
+
+            <!-- Strength Training Inputs -->
+            <Label Text="Sets" x:Name="SetsLabel" IsVisible="False"/>
+            <Entry x:Name="SetsEntry" Keyboard="Numeric" IsVisible="False"/>
+
+            <Label Text="Reps" x:Name="RepsLabel" IsVisible="False"/>
+            <Entry x:Name="RepsEntry" Keyboard="Numeric" IsVisible="False"/>
+
+            <Label Text="Weight" x:Name="WeightLabel" IsVisible="False"/>
+            <Entry x:Name="WeightEntry" Keyboard="Numeric" IsVisible="False"/>
+
+            <!-- Cardio Inputs -->
+            <Label Text="Duration" x:Name="DurationLabel" IsVisible="False"/>
+            <Entry x:Name="DurationEntry" Keyboard="Numeric" IsVisible="False"/>
+
+            <Label Text="Distance" x:Name="DistanceLabel" IsVisible="False"/>
+            <Entry x:Name="DistanceEntry" Keyboard="Numeric" IsVisible="False"/>
+
+            <!-- Save Button -->
+            <Button Text="Save Workout"
+                    Clicked="SaveWorkoutClicked"
+                    BackgroundColor="#2E7D32"
+                    TextColor="White"
+                    Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
